@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountDown", "CountDown\CountDown.csproj", "{20DEC73B-B946-45A3-906C-EA68A7042BD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GOKManage", "GOKManage\GOKManage.csproj", "{DE7EF00B-CA9A-4446-A416-DFE801A34BBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GOK_client", "GOK_client\GOK_client.csproj", "{E6D231F2-28B3-43A8-9F90-9B1ECBA96D41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20DEC73B-B946-45A3-906C-EA68A7042BD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DEC73B-B946-45A3-906C-EA68A7042BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20DEC73B-B946-45A3-906C-EA68A7042BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20DEC73B-B946-45A3-906C-EA68A7042BD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE7EF00B-CA9A-4446-A416-DFE801A34BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7EF00B-CA9A-4446-A416-DFE801A34BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7EF00B-CA9A-4446-A416-DFE801A34BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7EF00B-CA9A-4446-A416-DFE801A34BBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6D231F2-28B3-43A8-9F90-9B1ECBA96D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6D231F2-28B3-43A8-9F90-9B1ECBA96D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6D231F2-28B3-43A8-9F90-9B1ECBA96D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6D231F2-28B3-43A8-9F90-9B1ECBA96D41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1913577-0A77-4621-AFE0-A6D498849C43}
+	EndGlobalSection
+EndGlobal

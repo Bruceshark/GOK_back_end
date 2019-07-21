@@ -1,0 +1,7 @@
+D:\FEshangye\GOKTest\CountDown\bin\Debug\CountDown.exe.config
+D:\FEshangye\GOKTest\CountDown\bin\Debug\CountDown.exe
+D:\FEshangye\GOKTest\CountDown\bin\Debug\CountDown.pdb
+D:\FEshangye\GOKTest\CountDown\obj\Debug\CountDown.csprojAssemblyReference.cache
+D:\FEshangye\GOKTest\CountDown\obj\Debug\CountDown.csproj.CoreCompileInputs.cache
+D:\FEshangye\GOKTest\CountDown\obj\Debug\CountDown.exe
+D:\FEshangye\GOKTest\CountDown\obj\Debug\CountDown.pdb
