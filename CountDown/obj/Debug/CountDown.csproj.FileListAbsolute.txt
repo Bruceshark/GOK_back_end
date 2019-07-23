@@ -5,3 +5,10 @@ D:\FEshangye\GOKTest\CountDown\obj\Debug\CountDown.csprojAssemblyReference.cache
 D:\FEshangye\GOKTest\CountDown\obj\Debug\CountDown.csproj.CoreCompileInputs.cache
 D:\FEshangye\GOKTest\CountDown\obj\Debug\CountDown.exe
 D:\FEshangye\GOKTest\CountDown\obj\Debug\CountDown.pdb
+D:\FEshangye\GOK_back_end\CountDown\bin\Debug\CountDown.exe.config
+D:\FEshangye\GOK_back_end\CountDown\bin\Debug\CountDown.exe
+D:\FEshangye\GOK_back_end\CountDown\bin\Debug\CountDown.pdb
+D:\FEshangye\GOK_back_end\CountDown\obj\Debug\CountDown.csprojAssemblyReference.cache
+D:\FEshangye\GOK_back_end\CountDown\obj\Debug\CountDown.csproj.CoreCompileInputs.cache
+D:\FEshangye\GOK_back_end\CountDown\obj\Debug\CountDown.exe
+D:\FEshangye\GOK_back_end\CountDown\obj\Debug\CountDown.pdb

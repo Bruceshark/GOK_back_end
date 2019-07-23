@@ -40,6 +40,7 @@ namespace GOKManage
             messages.SetJsonType(JsonType.Array);
             infos.SetJsonType(JsonType.Array);
             historys.SetJsonType(JsonType.Array);
+            //取出数据库里管理员需要处理的所有消息
             SqlCommand cmd1 = new SqlCommand("SELECT MSG_ID, NAME, MSG_CONTENT, QQ_ID, IS_PROCESSED, TIME " +
                                                 "FROM USER_TBL, QQ_TBL, ADMIN_MSG_TBL " +
                                                 "WHERE USER_TBL.USER_ID = ADMIN_MSG_TBL.USER_ID " +
@@ -63,7 +64,7 @@ namespace GOKManage
                     }
                 }
             }
-
+            //取出所有个人数据
             SqlCommand cmd2 = new SqlCommand("SELECT USER_TBL.USER_ID, NAME, ALIVE, JOB_NAME, IDEN_2_NAME, IDEN_1_NAME, BULLET_NUM, SUM(SKILL_LIMIT) AS SKILL_LIMIT, " +
                                                     "STATUS, DIETIME=ISNULL(DIETIME, -1), INCL_NAME, TIME=ISNULL(TIME, 0) " +
                                                 "FROM USER_TBL, JOB_TBL, JOB_LIST_TBL, INCL_TBL, INCL_LIST_TBL, IDEN_TBL, IDEN_1_LIST_TBL, IDEN_2_LIST_TBL," +
@@ -105,7 +106,7 @@ namespace GOKManage
                     }
                 }
             }
-
+            //取出所有场上发生的事件
             SqlCommand cmd3 = new SqlCommand("SELECT MSG_ID, MSG_TIME, MSG_CONTENT FROM ADMIN_MSGLINE_TBL ORDER BY MSG_ID DESC", conn);
             using (SqlDataReader reader = cmd3.ExecuteReader())
             {
@@ -122,7 +123,7 @@ namespace GOKManage
                     }
                 }
             }
-
+            //取出场上所有数据，数据量较大维护需仔细参考前端
             List<string> lst = new List<string>();
             SqlCommand cmd4 = new SqlCommand("SELECT COUNT (*) FROM USER_TBL, STATUS_TBL " +
                                                 "WHERE USER_TBL.USER_ID = STATUS_TBL.USER_ID " +
@@ -293,12 +294,27 @@ namespace GOKManage
             datas["trader_num_alive"] = lst[34];
             datas["trader_num_total"] = lst[35];
 
+            //取出游戏目前状况：开始/暂停/禁枪
+            int state = 0;
+            SqlCommand cmd = new SqlCommand("SELECT SWITCH FROM GAME_PROCESS_TBL WHERE PROCESS_NAME = 'STATE'", conn);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        state = reader.GetInt32(reader.GetOrdinal("SWITCH"));
+                    }
+                }
+            }
+            
             JsonData resultJson = new JsonData();
             resultJson.SetJsonType(JsonType.Object);
             resultJson["message"] = messages;
             resultJson["info"] = infos;
             resultJson["history"] = historys;
             resultJson["data"] = datas;
+            resultJson["state"] = state;
             context.Response.Write(resultJson.ToJson());
             conn.Close();//关闭数据库
 
