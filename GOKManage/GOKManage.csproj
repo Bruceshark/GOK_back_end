@@ -88,11 +88,17 @@
     <Compile Include="AdminProcessHandler.ashx.cs">
       <DependentUpon>AdminProcessHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="EndGameHandler.ashx.cs">
+      <DependentUpon>EndGameHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="LoginCheck.ashx.cs">
       <DependentUpon>LoginCheck.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="pub.cs" />
+    <Compile Include="ScoreDataQuery.ashx.cs">
+      <DependentUpon>ScoreDataQuery.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminDataQuery.ashx" />
@@ -101,7 +107,9 @@
     <Content Include="AdminMethodHandler.ashx" />
     <Content Include="AdminProcessHandler.ashx" />
     <Content Include="LoginCheck.ashx" />
+    <Content Include="EndGameHandler.ashx" />
     <None Include="packages.config" />
+    <Content Include="ScoreDataQuery.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
-using System.Web.SessionState;
 using LitJson;
 
 namespace GOKManage
@@ -11,7 +10,7 @@ namespace GOKManage
     /// <summary>
     /// AdminDataQuery 的摘要说明
     /// </summary>
-    public class AdminDataQuery : IHttpHandler, IRequiresSessionState
+    public class AdminDataQuery : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)
