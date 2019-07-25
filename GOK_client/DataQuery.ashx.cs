@@ -74,6 +74,9 @@ namespace GOK_client
                 case "inclChoose":
                     inclChoose(id);
                     break;
+                case "result":
+                    result(id);
+                    break;
             }
         }
 
@@ -239,7 +242,6 @@ namespace GOK_client
             context.Response.Write(resultJson.ToJson());
 
             conn.Close();//关闭数据库
-
         }
         /// <summary>
         /// 给用户的第二身份详情页面传递数据 i.e.身份名称，身份描述，身份所对应扑克牌
@@ -669,6 +671,50 @@ namespace GOK_client
                 context.Response.Write(0);
             }
             conn.Close();
+        }
+        private void result (string id)
+        {
+            int score = 0; ;
+            HttpContext context = HttpContext.Current;
+            SqlConnection conn = new SqlConnection("server=.;database=GOK;uid=admin1;pwd=GOK2019");
+            conn.Open();//打开数据库
+            SqlCommand cmd = new SqlCommand("SELECT SCORE FROM RESULT_SCORE_TBL WHERE USER_ID =" + id, conn);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        score = reader.GetInt32(reader.GetOrdinal("SCORE"));
+                    }
+                }
+            }
+
+            var logs = new JsonData();
+            SqlCommand cmdlog = new SqlCommand("SELECT LOG FROM RESULT_LOG_TBL WHERE USER_ID = " + id, conn);
+            using (SqlDataReader reader = cmdlog.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        var log = new JsonData();
+                        log["desc"] = reader.GetString(reader.GetOrdinal("LOG"));
+                        log.ToJson();
+                        logs.Add(log);
+                    }
+                }
+            }
+
+            JsonData resultJson = new JsonData();
+            resultJson.SetJsonType(JsonType.Object);
+            resultJson["score"] = score;
+            resultJson["logs"] = logs;
+
+            context.Response.Write(resultJson.ToJson());
+
+            conn.Close();//关闭数据库
+
         }
     }
 }
