@@ -49,7 +49,7 @@ namespace CountDown
                     PutToDeath();
                     //每到整点，给技能添加点数，给商人添加子弹
                     DateTime dt = System.DateTime.Now;
-                    if (dt.ToString("mm:ss") == "00:00"|| dt.ToString("mm:ss") == "00:01")
+                    if (dt.ToString("mm:ss") == "30:00"|| dt.ToString("mm:ss") == "30:01")
                     {
                         AddSkillLimit();
                         AddBullet();

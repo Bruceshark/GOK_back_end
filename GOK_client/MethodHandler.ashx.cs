@@ -184,7 +184,7 @@ namespace GOK_client
                             SqlCommand msg3 = new SqlCommand("INSERT INTO USER_MESSAGE_TBL(USER_ID, MSG_IS_READ, MSG_TITLE, MSG_CONTENT, MSG_TIME)" +
                                                              "VALUES(" + user2 + ", 0, '受到处决', '你受到了一次来自" + user1Name + "的处决，点击状态按钮查看详情', '" + msgTime + "')" +
                                                              ";INSERT INTO ADMIN_MSG_TBL(USER_ID, TIME, MSG_CONTENT, IS_PROCESSED) " +
-                                                            "VALUES(" + user2 + ",'" + msgTimeLong + "','你受到" + user1Name + "的处决，被动发动技能一闪，豁免本次伤害并反向发动了一次处决', 0)", conn);
+                                                            "VALUES(" + user2 + ",'" + msgTimeLong + "','你受到" + user1Name + "的处决，点击状态按钮查看详情', 0)", conn);
                             msg3.ExecuteNonQuery();
                             //如果user2的倒计时是null，开始1800濒死倒计时；给管理员发送濒死信息
                             if (lst[7] == "")

@@ -56,7 +56,7 @@ namespace GOKManage
                         int yNum = reader.GetInt32(reader.GetOrdinal("NUM"));
                         if(yNum == 0)
                         {
-                            yGangBoss = 1;
+                            yGangBoss = 0;
                         }
                     }
                 }
@@ -187,8 +187,8 @@ namespace GOKManage
                 {
                     if (kingSuccess == 0)
                     {
-                        result += 20;
-                        SqlCommand cmd8 = new SqlCommand("INSERT INTO RESULT_LOG_TBL (USER_ID, LOG) VALUES (" + i + ",'阻止五王汇合事件：20分')", conn);
+                        result += 30;
+                        SqlCommand cmd8 = new SqlCommand("INSERT INTO RESULT_LOG_TBL (USER_ID, LOG) VALUES (" + i + ",'阻止五王汇合事件：30分')", conn);
                         cmd8.ExecuteNonQuery();
                     }
                     if (alive == 0)
@@ -205,8 +205,8 @@ namespace GOKManage
                     }
                     if (zGangBoss != 0)
                     {
-                        result += 20;
-                        SqlCommand cmd8 = new SqlCommand("INSERT INTO RESULT_LOG_TBL (USER_ID, LOG) VALUES (" + i + ",'止戈派老大死亡：20分')", conn);
+                        result += 10;
+                        SqlCommand cmd8 = new SqlCommand("INSERT INTO RESULT_LOG_TBL (USER_ID, LOG) VALUES (" + i + ",'止戈派老大死亡：10分')", conn);
                         cmd8.ExecuteNonQuery();
                     }
                     if (yGangBoss != 0)
